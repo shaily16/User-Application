@@ -1,0 +1,42 @@
+<h1>List of Users</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+            <th></th>
+            <th></th>
+            <th><a class="btn btn-primary" routerLink="/add-student">+ Add Student</a></th>
+        </tr>
+    </thead>
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody *ngFor="let student of allStudents; let i = index">
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{student.first_name}}</td>
+            <td>{{student.last_name}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.number}}</td>
+            <td>
+                <button class="btn btn-success btn-sm" (click)="editStudent(student)">Edit</button>&nbsp;&nbsp;
+                <button class="btn btn-error btn-sm" (click)="deleteStudent(student._id)">Delete</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
